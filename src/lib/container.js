@@ -1,4 +1,5 @@
 import { createContainer, Lifetime, InjectionMode, asValue } from 'awilix'
+import mongoose from 'mongoose'
 import { logger } from './logger'
 
 /**
@@ -37,6 +38,7 @@ export function configureContainer() {
     .register({
       // Our logger is already constructed,
       // so provide it as-is to anyone who wants it.
-      logger: asValue(logger)
+      logger: asValue(logger),
+      mongoose: asValue(mongoose)
     })
 }

@@ -11,6 +11,7 @@ import { configureContainer } from './container'
 import { notFoundHandler } from '../middleware/not-found'
 import { errorHandler } from '../middleware/error-handler'
 import { registerContext } from '../middleware/register-context'
+import './db'
 
 /**
  * Creates and returns a new Koa application.

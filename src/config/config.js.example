@@ -1,0 +1,7 @@
+export const secret = 'supersecretcode';
+export const dbName = 'db';
+export const dbUser = 'user';
+export const dbPass = 'hardpassword';
+export const dbHost = 'mongodb';
+export const dbPort = '27017';
+export const dbAuthType = 'none';
