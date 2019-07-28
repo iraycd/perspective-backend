@@ -12,7 +12,6 @@ import { notFoundHandler } from '../middleware/not-found'
 import { errorHandler } from '../middleware/error-handler'
 import { registerContext } from '../middleware/register-context'
 import './db'
-
 /**
  * Creates and returns a new Koa application.
  * Does *NOT* call `listen`!
@@ -25,6 +24,7 @@ export async function createServer() {
 
   // Container is configured with our services and whatnot.
   const container = (app.container = configureContainer())
+  container.resolve('seed')
   app
     // Top middleware is the error handler.
     .use(errorHandler)

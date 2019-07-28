@@ -4,9 +4,8 @@ export default class QuestionService {
   }
 
   async list() {
-    const Question = new this.QuestionStore()
-    const question = await Question.find({})
-    return question._doc
+    const question = await this.QuestionStore.find({})
+    return question
   }
 
   async create(payload) {
@@ -16,14 +15,15 @@ export default class QuestionService {
   }
 
   async update(id, payload) {
-    const Question = new this.QuestionStore()
-    const question = await Question.findOneAndUpdate({ _id: id }, payload)
+    const question = await this.QuestionStore.findOneAndUpdate(
+      { _id: id },
+      payload
+    )
     return question._doc
   }
 
   async remove(id) {
-    const Question = new this.QuestionStore()
-    const question = await Question.remove({ _id: id })
+    const question = await this.QuestionStore.remove({ _id: id })
     return question._doc
   }
 }

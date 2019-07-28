@@ -13,6 +13,11 @@ export default function createQuestionStore(mongoose) {
     direction: {
       type: Boolean,
       required: 'Direction is required'
+    },
+    meaning: {
+      type: String,
+      required: 'Meaning is required',
+      enum: ['E', 'I', 'S', 'N', 'T', 'F', 'J', 'P']
     }
   })
   return mongoose.model('Question', Question)

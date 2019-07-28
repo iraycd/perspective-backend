@@ -1,6 +1,13 @@
-import { createContainer, Lifetime, InjectionMode, asValue } from 'awilix'
+import {
+  createContainer,
+  Lifetime,
+  InjectionMode,
+  asValue,
+  asFunction
+} from 'awilix'
 import mongoose from 'mongoose'
 import { logger } from './logger'
+import seed from '../seed'
 
 /**
  * Using Awilix, the following files and folders (glob patterns)
@@ -39,6 +46,7 @@ export function configureContainer() {
       // Our logger is already constructed,
       // so provide it as-is to anyone who wants it.
       logger: asValue(logger),
-      mongoose: asValue(mongoose)
+      mongoose: asValue(mongoose),
+      seed: asFunction(seed)
     })
 }
