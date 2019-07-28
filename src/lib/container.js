@@ -7,6 +7,7 @@ import {
 } from 'awilix'
 import mongoose from 'mongoose'
 import { logger } from './logger'
+import constants from '../consts'
 import seed from '../seed'
 
 /**
@@ -47,6 +48,7 @@ export function configureContainer() {
       // so provide it as-is to anyone who wants it.
       logger: asValue(logger),
       mongoose: asValue(mongoose),
+      constants: asValue(constants),
       seed: asFunction(seed)
     })
 }
